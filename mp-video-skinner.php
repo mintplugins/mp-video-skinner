@@ -3,7 +3,7 @@
 Plugin Name: MP Video Skinner
 Plugin URI: http://moveplugins.com
 Description: Display YouTube videos with your own custom player skins!
-Version: beta1.0.0.0
+Version: beta1.0.0.1
 Author: Move Plugins
 Author URI: http://moveplugins.com
 Text Domain: mp_video_skinner
@@ -137,6 +137,11 @@ function mp_video_skinner_include_files(){
 		 * Misc Functions
 		 */
 		require( mp_video_skinner_PLUGIN_DIR . 'includes/misc-functions/misc-functions.php' );
+		
+		/**
+		 * Shortcode
+		 */
+		require( mp_video_skinner_PLUGIN_DIR . 'includes/misc-functions/shortcode.php' );
 	
 	}
 }
