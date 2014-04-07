@@ -29,13 +29,6 @@ function mp_video_skinner_show_insert_shortcode(){
 				'option_type' => 'select',
 				'option_value' => $skins
 			),
-			array(
-				'option_id' => 'skin_options',
-				'option_title' => '',
-				'option_description' => '',
-				'option_type' => 'basictext',
-				'option_value' => ''
-			),
 		)
 	); 
 	

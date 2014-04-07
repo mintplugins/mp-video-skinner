@@ -37,8 +37,8 @@ function mp_video_skinner_footer_scripts(){
 		//Youtube JS
 		wp_enqueue_script( 'mp_video_skinner_youtube_js', plugins_url( 'js/youtube-scripts/youtube.js', dirname(__FILE__) ), array( 'jquery' ) );
 		wp_localize_script( 'mp_video_skinner_youtube_js', 'mp_video_skinner_vars', array(
-			'video_id' => $video_id,
-			'autoplay' => apply_filters( 'mp_video_skinner_youtube_autoplay', true )
+			'autoplay' => apply_filters( 'mp_video_skinner_youtube_autoplay', true ),
+			'video_id' => $video_id
 		));	
 		
 		//Youtube Player Skinner CSS

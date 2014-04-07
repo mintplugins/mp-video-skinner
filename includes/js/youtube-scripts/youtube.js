@@ -4,7 +4,6 @@ mpvsyt_tag.src = "https://www.youtube.com/iframe_api";
 var mpvsyt_script_tag = document.getElementsByTagName('script')[0];
 mpvsyt_script_tag.parentNode.insertBefore(mpvsyt_tag, mpvsyt_script_tag);
 
-
 //Fires when the API is ready
 function onYouTubeIframeAPIReady() {
 	
@@ -26,6 +25,9 @@ function mpvsyt_on_ready(event) {
 	
 	//trigger set up event
 	jQuery(window).trigger("mpvsyt_set_up_player", event);
+	
+	//Access the player like this:
+	//event.target.mute();
 
 }
 

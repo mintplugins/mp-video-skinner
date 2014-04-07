@@ -133,7 +133,7 @@ function mp_video_skinner_youtube_embed_page() {
         
         <?php do_action( 'mp_video_skinner_embed_enqueue' ); ?>
 		
-		<?php wp_head(); ?>
+		<?php //wp_head(); ?>
 		
 		<style type="text/css">
 		#wpadminbar{

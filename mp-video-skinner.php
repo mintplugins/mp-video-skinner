@@ -3,7 +3,7 @@
 Plugin Name: MP Video Skinner
 Plugin URI: http://moveplugins.com
 Description: Display YouTube videos with your own custom player skins!
-Version: beta1.0.0.1
+Version: beta1.0.0.2
 Author: Move Plugins
 Author URI: http://moveplugins.com
 Text Domain: mp_video_skinner
@@ -33,20 +33,20 @@ License: GPL2
 |--------------------------------------------------------------------------
 */
 // Plugin version
-if( !defined( 'mp_video_skinner_VERSION' ) )
-	define( 'mp_video_skinner_VERSION', '1.0.0.0' );
+if( !defined( 'MP_VIDEO_SKINNER_VERSION' ) )
+	define( 'MP_VIDEO_SKINNER_VERSION', '1.0.0.0' );
 
 // Plugin Folder URL
-if( !defined( 'mp_video_skinner_PLUGIN_URL' ) )
-	define( 'mp_video_skinner_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+if( !defined( 'MP_VIDEO_SKINNER_PLUGIN_URL' ) )
+	define( 'MP_VIDEO_SKINNER_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 // Plugin Folder Path
-if( !defined( 'mp_video_skinner_PLUGIN_DIR' ) )
-	define( 'mp_video_skinner_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+if( !defined( 'MP_VIDEO_SKINNER_PLUGIN_DIR' ) )
+	define( 'MP_VIDEO_SKINNER_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 // Plugin Root File
-if( !defined( 'mp_video_skinner_PLUGIN_FILE' ) )
-	define( 'mp_video_skinner_PLUGIN_FILE', __FILE__ );
+if( !defined( 'MP_VIDEO_SKINNER_PLUGIN_FILE' ) )
+	define( 'MP_VIDEO_SKINNER_PLUGIN_FILE', __FILE__ );
 
 /*
 |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ if( !defined( 'mp_video_skinner_PLUGIN_FILE' ) )
 function mp_video_skinner_textdomain() {
 
 	// Set filter for plugin's languages directory
-	$mp_video_skinner_lang_dir = dirname( plugin_basename( mp_video_skinner_PLUGIN_FILE ) ) . '/languages/';
+	$mp_video_skinner_lang_dir = dirname( plugin_basename( MP_VIDEO_SKINNER_PLUGIN_FILE ) ) . '/languages/';
 	$mp_video_skinner_lang_dir = apply_filters( 'mp_video_skinner_languages_directory', $mp_video_skinner_lang_dir );
 
 
@@ -105,17 +105,17 @@ function mp_video_skinner_include_files(){
 		/**
 		 * Include Plugin Checker
 		 */
-		require( mp_video_skinner_PLUGIN_DIR . '/includes/plugin-checker/class-plugin-checker.php' );
+		require( MP_VIDEO_SKINNER_PLUGIN_DIR . '/includes/plugin-checker/class-plugin-checker.php' );
 		
 		/**
 		 * Include Plugin Installer
 		 */
-		require( mp_video_skinner_PLUGIN_DIR . '/includes/plugin-checker/class-plugin-installer.php' );
+		require( MP_VIDEO_SKINNER_PLUGIN_DIR . '/includes/plugin-checker/class-plugin-installer.php' );
 		
 		/**
 		 * Check if wp_core in installed
 		 */
-		require( mp_video_skinner_PLUGIN_DIR . 'includes/plugin-checker/included-plugins/mp-core-check.php' );
+		require( MP_VIDEO_SKINNER_PLUGIN_DIR . 'includes/plugin-checker/included-plugins/mp-core-check.php' );
 		
 	}
 	/**
@@ -126,22 +126,27 @@ function mp_video_skinner_include_files(){
 		/**
 		 * Update script - keeps this plugin up to date
 		 */
-		require( mp_video_skinner_PLUGIN_DIR . 'includes/updater/mp-video-skinner-update.php' );
+		require( MP_VIDEO_SKINNER_PLUGIN_DIR . 'includes/updater/mp-video-skinner-update.php' );
 		
 		/**
 		 * Enqueue Scripts
 		 */
-		require( mp_video_skinner_PLUGIN_DIR . 'includes/misc-functions/enqueue-scripts.php' );
+		require( MP_VIDEO_SKINNER_PLUGIN_DIR . 'includes/misc-functions/enqueue-scripts.php' );
 		
 		/**
 		 * Misc Functions
 		 */
-		require( mp_video_skinner_PLUGIN_DIR . 'includes/misc-functions/misc-functions.php' );
+		require( MP_VIDEO_SKINNER_PLUGIN_DIR . 'includes/misc-functions/misc-functions.php' );
+		
+		/**
+		 * Custom Skins Custom Post Type
+		 */
+		require( MP_VIDEO_SKINNER_PLUGIN_DIR . 'includes/custom-post-types/custom-skins.php' );
 		
 		/**
 		 * Shortcode
 		 */
-		require( mp_video_skinner_PLUGIN_DIR . 'includes/misc-functions/shortcode.php' );
+		require( MP_VIDEO_SKINNER_PLUGIN_DIR . 'includes/misc-functions/shortcode.php' );
 	
 	}
 }
